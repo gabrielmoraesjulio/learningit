@@ -22,5 +22,6 @@ phanthoms = {
 
 print("Informations about the Phanthom Thieves of Hearts...")
 for phanthoms, data in phanthoms.items():
+    print(phanthoms)
     for key, value in data.items():
         print(f" {key}: {value}")
