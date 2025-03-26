@@ -91,14 +91,23 @@ phanthoms = {
     },
 }
 
+def search_phantom(name):
+    if name in phanthoms:
+        return phanthoms[name]
+    else:
+        return None
 
-print("Informations about the Phanthom Thieves of Hearts...")
-for phanthoms, data in phanthoms.items():
-    print(phanthoms)
-    for key, value in data.items():
+name_searched = input("Type a phantom thief name: ")
+result = search_phantom(name_searched)
+
+if result:
+    print(f"Informations of {name_searched}:")
+    for key, value in result.items():
         if isinstance(value, dict):
-            print(f" {key}:")
+            print(f"{key}")
             for persona_key, persona_value in value.items():
-                print(f"    {persona_key}: {persona_value}")
+                print(f"{persona_key}: {persona_value}")
         else:
-            print(f" {key}: {value}")
+            print(f"{key}: {value}")
+else:
+    print(f"Phantom Thief '{name_searched}' don't find.")
